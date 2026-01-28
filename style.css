@@ -1,0 +1,184 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- BODY + BACKGROUND ---------- */
+body {
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  background: #f0e9d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Leaf pattern background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("leaf-pattern.png") repeat;
+  background-size: 450px;
+  opacity: 0.07;
+  filter: blur(1.2px);
+  z-index: -1;
+}
+
+/* ---------- LAYOUT ---------- */
+.wrapper {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: rgba(255, 252, 245, 0.95);
+  max-width: 520px;
+  width: 100%;
+  padding: 48px 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+/* ---------- LOGO ---------- */
+.logo img {
+  width: 130px;
+  margin-bottom: 12px;
+}
+
+/* ---------- HEADING ---------- */
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: #594029;
+  margin-bottom: 16px;
+}
+
+/* ---------- TEXT ---------- */
+.subtitle {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #493b2f;
+  margin-bottom: 28px;
+}
+
+/* ---------- BADGE ---------- */
+.badge {
+  display: inline-block;
+  padding: 10px 22px;
+  border: 1px solid #8f6f2b;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #c89b3c;
+  margin-bottom: 32px;
+}
+
+/* ---------- FORM ---------- */
+.notify {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.notify input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.notify input:focus {
+  outline: none;
+  border-color: #c89b3c;
+}
+
+/* ---------- BUTTON ---------- */
+.notify button {
+  padding: 14px 22px;
+  border-radius: 10px;
+  border: none;
+  background: #2e1c12;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notify button:hover {
+  background: #4a2d1f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- SOCIAL ICONS ---------- */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials a {
+  color: #7a5c3c;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #c89b3c;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 520px) {
+  .card {
+    padding: 36px 24px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .notify {
+    flex-direction: column;
+  }
+
+  .notify button {
+    width: 100%;
+  }
+}
+
+/* ---------- EXTRA SMALL MOBILE ---------- */
+@media (max-width: 420px) {
+  body::before {
+    opacity: 0.04;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14.5px;
+  }
+}
